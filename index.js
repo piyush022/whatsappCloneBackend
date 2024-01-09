@@ -10,15 +10,14 @@ const chatModel = require("./model/chatModel");
 
 const app = express();
 const server = createServer(app);
+app.use(cors());
+app.use(express.json());
 const io = new Server(server, {
   cors: {
     origin: "https://nextchat-alpha.vercel.app",
     methods: ["GET", "POST"],
   },
 });
-
-app.use(cors());
-app.use(express.json());
 
 //function to save message.............
 async function saveMessage(msgdata) {
