@@ -43,9 +43,6 @@ io.on("connection", (socket) => {
   });
 });
 
-app.get("/", (req, resp) => {
-  resp.json({ msg: "hello from backend" });
-});
 app.use("/user", userRouter);
 app.use("/chat", chatRouter);
 
